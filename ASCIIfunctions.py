@@ -15,7 +15,7 @@ def main():
 
     MAX_PRICE = 1000.0
 
-    
+
     """ ADJUSTMENTS BEGIN HERE:
        calling the get numbers function inside main function
        """

@@ -16,31 +16,40 @@ choice = input(">>> ").upper()
 """FUNCTIONS ARE DEFINED HERE:
     created using right click >> refractor >> extract >> method"""
 
-def Celcius_function():
+def Celcius_function(value):
     global celsius, fahrenheit
     if choice == "C":
-        celsius = float(input("Celsius: "))
+        celsius = int(input("Celsius: "))
         fahrenheit = celsius * 9.0 / 5 + 32
+        value = fahrenheit
+        return value
         print("\nResult: {:.2f} F\n".format(fahrenheit))
 
 
-def fahrenheit_function():
+def fahrenheit_function(value):
     global fahrenheit, celsius
     if choice == "F":
         # TODO: Write this section so the program converts F to C and displays the result
         # TODONE
-        fahrenheit = float(input("Fahrenheit: "))
+        fahrenheit = int(input("Fahrenheit: "))
         celsius = 5 / 9 * (fahrenheit - 32)
-        print("\nResult: {:.2f} C (The proper measurement.....)\n".format(celsius))
+        value = celsius
+        return value
+    else:
+        pass
 
 
 while choice != "Q":
 
 
     """Functions are called here:"""
-
-    Celcius_function()
-    fahrenheit_function()
+    value = 0
+    Celcius_function(value)
+    Cel=Celcius_function(value)
+    print("\nResult: {:.2f} F\n".format(Cel))
+    fahrenheit_function(value)
+    Farh=fahrenheit_function(value)
+    print("\nResult: {:.2f} C (The proper measurement.....)\n".format(Farh))
 
     choice = input(">>> ").upper()
 print("Cheers Mate, was fun :).")
