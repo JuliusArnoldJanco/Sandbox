@@ -15,11 +15,15 @@ def main():
 
     MAX_PRICE = 1000.0
 
-    INITIAL_PRICE = get_numbers(lower, upper)
+    
+    """ ADJUSTMENTS BEGIN HERE:
+       calling the get numbers function inside main function
+       """
+
+    price = get_numbers(lower, upper)
     counter = 0
 
-    price = INITIAL_PRICE
-    print(price)
+    # Debug to check output on get_numbers function print(price)
     print("initial price is: ${:,.2f}".format(price))
     # print("${:,.2f}".format(price))
 
@@ -53,9 +57,19 @@ def main():
 
         print("The price on {:,.0f} is ${:,.2f}".format(counter, price))
         continue
+
+
+        """ get_numbers function """
+
+
 def get_numbers(lower, upper):
     w = 1
     while w !=0:
+
+        """ Checks conditioning of input & returns upper or lower value
+            didn't fully understand what the upper and lower values were to be
+            so just made 9 < x > 30 & 31 < x > 51  """
+
         try:
             user = int(input("Enter number (10-50):"))
 
@@ -72,6 +86,10 @@ def get_numbers(lower, upper):
             elif user <= 10:
                 print("Please enter a valid number")
                 continue
+
+
+                """ Returning upper & lower values to be used by main function """
+
 
             elif user <= 30:
                 lower = user
