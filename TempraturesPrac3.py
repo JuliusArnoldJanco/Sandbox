@@ -18,38 +18,40 @@ choice = input(">>> ").upper()
 
 def Celcius_function(value):
     global celsius, fahrenheit
-    if choice == "C":
-        celsius = int(input("Celsius: "))
-        fahrenheit = celsius * 9.0 / 5 + 32
-        value = fahrenheit
-        return value
-        print("\nResult: {:.2f} F\n".format(fahrenheit))
+
+    celsius = int(input("Celsius: "))
+    fahrenheit = celsius * 9.0 / 5 + 32
+    value = fahrenheit
+    return value
+
 
 
 def fahrenheit_function(value):
     global fahrenheit, celsius
-    if choice == "F":
-        # TODO: Write this section so the program converts F to C and displays the result
-        # TODONE
-        fahrenheit = int(input("Fahrenheit: "))
-        celsius = 5 / 9 * (fahrenheit - 32)
-        value = celsius
-        return value
-    else:
-        pass
+    #if choice == "F":
+    fahrenheit = int(input("Fahrenheit: "))
+    celsius = 5 / 9 * (fahrenheit - 32)
+
+    value = celsius
+
+    return value
+
 
 
 while choice != "Q":
 
 
     """Functions are called here:"""
+
     value = 0
-    Celcius_function(value)
-    Cel=Celcius_function(value)
-    print("\nResult: {:.2f} F\n".format(Cel))
-    fahrenheit_function(value)
-    Farh=fahrenheit_function(value)
-    print("\nResult: {:.2f} C (The proper measurement.....)\n".format(Farh))
+    if choice == "C":
+        Cel=Celcius_function(value)
+        print("\nResult: {:.2f} F\n".format(Cel))
+    elif choice == "F":
+        Farh=fahrenheit_function(value)
+        print("\nResult: {:.2f} C (The proper measurement.....)\n".format(Farh))
+    else:
+        print("Invalid option")
 
     choice = input(">>> ").upper()
 print("Cheers Mate, was fun :).")
